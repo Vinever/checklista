@@ -1,6 +1,7 @@
-var button = document.getElementById("enter");
+var button = document.getElementById("incluir");
 var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
+var listItems = document.getElementsByTagName("li");
 
 function inputLength() {
     return input.value.length;
@@ -29,13 +30,7 @@ button.addEventListener("click", addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-document.getElementById("lista").onclick = function() {getDone()};
-
-function getDone() {
-    if(onclick){
-        document.getElementById("lista").style.textDecoration = "line-through"
-    }else{
-        document.getElementById("lista").style.textDecoration = "line-through"
-    }
-  
+ul.onclick = function(event){
+	var target = event.target;
+	target.classList.toggle("done");
 }
